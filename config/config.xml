@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <processors>
+        <delimiterProcessor>
+
+            <input>
+                <!--Input directory path-->
+                <folderPath>build\in</folderPath>
+
+                <!--Input file name Glob pattern-->
+                <namePattern>input*</namePattern>
+
+                <!--Regexp pattern for each line filtering-->
+                <linePattern>.*(URCS-DC).*</linePattern>
+
+                <!--Input file Line separator-->
+                <lineSeparator/>
+
+                <!--Input file Column delimeter-->
+                <delimiter>;</delimiter>
+            </input>
+
+            <output>
+                <!--Output directory path-->
+                <folderPath>build\out</folderPath>
+
+                <!--Output file name template. Allow use {INPUT_NAME}, {SEQ}, {DATE}, {TIME}, {DATE_TIME} placeholders-->
+                <namePattern>out_{INPUT_NAME}_{SEQ}_{TIME}.txt</namePattern>
+
+                <!--Output file Line separator-->
+                <lineSeparator>**DONE**</lineSeparator>
+
+                <!--Output file Column delimeter-->
+                <delimiter>|</delimiter>
+            </output>
+
+            <archive>
+                <enabled>true</enabled>
+
+                <!--Archive directory path-->
+                <folderPath>build\archive</folderPath>
+
+                <!--Archive file name template. Allow use same placeholders as in Output name-->
+                <namePattern>arc_{INPUT_NAME}_{TIME}.{INPUT_EXT}</namePattern>
+            </archive>
+
+            <!--Input file Columns settings. Columns must be described if they need to be exported.-->
+            <columns>
+                <!--To export a column to the output file, the 'exported' flag with the value 'true' must be set.-->
+                <column exported="true">Date</column>
+                <column exported="true">Time</column>
+                <column>Col 3</column>
+                <column>Col 4</column>
+                <column exported="true">Type</column>
+                <column>Col 5</column>
+                <column exported="true">Col 6</column>
+                <column exported="true">Info</column>
+            </columns>
+        </delimiterProcessor>
+    </processors>
+</config>
