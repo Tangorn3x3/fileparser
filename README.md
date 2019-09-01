@@ -22,7 +22,7 @@
 
 Приложение представляет собой консольную утилиту.
 
-При запуске считывается конфигурация из файла [`config.xml`](/src/main/resources/config.xml) 
+При запуске считывается конфигурация из файла [`config.xml`](/config/config.xml) 
 и хранится в экземпляре singleton класса [`Configuration`](/src/main/java/com/maxkain/fileparser/utils/configs/Configuration.java)
 
 После запуска в отдельном потоке стартует экземпляр [`ProcessorRunner`](/src/main/java/com/maxkain/fileparser/processors/ProcessorRunner.java), 
@@ -60,7 +60,7 @@
 - `{TIME}` - текущее время (HH_mm_ss)
 - `{DATE_TIME}` - текущие дата и время (yyyy-mm-dd_HH_mm_ss)
 
-В настройках [`config.xml`](/src/main/resources/config.xml) также описываются колонки входного файла `config.processors.delimiterProcessor.columns`.
+В настройках [`config.xml`](/config/config.xml) также описываются колонки входного файла `config.processors.delimiterProcessor.columns`.
 Данная настройка нужна для определения порядка колонок и проставления флага необходимости экспорта для отдельных колонок.
 Например:
 ````xml
